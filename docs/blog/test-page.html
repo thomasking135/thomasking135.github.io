@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Test Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <body>
+  
+    <h1>Tom's Test Page</h1>
+    <br>
+   
+<h3>Small Questionnaire</h3>
+
+<form name='myform'>
+<p>What is your name? 
+<input type = 'text' name='name' value = 'Name'>
+<p>What is your favourite programming language?
+<select name="favourite">
+ <option value=HTML>HTML</option>
+ <option value=CSS>CSS</option>
+ <option value=Javascript>Javascript</option>
+
+</select>
+</p>
+<p><input type = 'submit' id="button1" onclick='check(); return false'></p>
+<!-- note that return false after the function call is vital to stop page refresh -->
+</p>
+</form>
+<p>Submit the form and to see the responses you just typed in!</p>
+<p id='f1'></p>
+<p id='f2'></p>
+
+    <div id="padding">
+    <header>
+        <h1>My event test page</h1>
+    </header>
+
+    <main>
+    <input type="button" value="Click here" onclick="showImage();" id="way-cool-button"/>
+    <br>
+    <img id="loadingImage" src="../images/byebye.gif" style="visibility:hidden"/>
+
+<br>
+<button id="button2" onmouseover="PlaySound('mySound')" 
+    onmouseout="StopSound('mySound')">Hover Over Me To Hear Some Beautiful Music</p>
+
+<audio id='mySound' src='http://upload.wikimedia.org/wikipedia/commons/6/6f/Cello_Live_Performance_John_Michel_Tchaikovsky_Violin_Concerto_3rd_MVT_applaused_cut.ogg'</button>
+
+
+    </main> 
+
+    </div>
+    <br>
+    <a href="https://thomasking135.github.io/" id="button1">Home</a>
+    <br><br>
+    
+    <div class="footer">
+    <p>&copy Bloggin Tom 2021-22</p>
+    </div>
+
+    <script>
+
+    function showImage(){
+        document.getElementById('loadingImage').style.visibility="visible";
+    }
+
+   function check()
+{
+   //document.writeln('Hi '+document.myform.name.value);
+   document.getElementById('f1').innerHTML = document.myform.name.value;
+   document.getElementById('f2').innerHTML = document.myform.favourite.value;
+}
+
+function PlaySound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.play();
+}
+
+function StopSound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.pause();
+    thissound.currentTime = 0;
+}
+
+ 
+    </script>
+    
+  
+  </body>
+</html>
