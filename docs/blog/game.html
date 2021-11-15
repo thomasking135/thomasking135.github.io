@@ -1,0 +1,118 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock, Paper, Scissors</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <body>
+  
+    <h1>Let's Play! Rock, Paper, Scissors</h1>
+
+    <h2>Here is the classic game of Rock, Paper, Scissors! Can you beat the System?</h2>  
+
+    <div id="padding">
+    
+    <div id="center">
+    <div class="score"></div>
+    <div class="message"></div>
+    <button type="button" id="game">R</button><br>
+    <button type="button" id ="game">P</button><br>
+    <button type="button"  id ="game">S</button><br>
+    </div>
+
+    <img src="../images/rps.jpg" width="100%" class="center">
+    
+    <script>
+    
+        const message = document.querySelector(".message");
+        const score = document.querySelector(".score");
+        const buttons = document.querySelectorAll("button");
+        let winner = [0, 0];
+  
+
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", playGame);
+        }
+
+        function playGame(e) {
+            let playerSelection = e.target.innerText;
+            let computerSelection = Math.random();
+            if (computerSelection < 0.34) {
+                computerSelection = "Rock";
+            }
+            else if (computerSelection <= 0.67) {
+                computerSelection = "Paper";
+            }
+            else {
+                computerSelection = "Scissors";
+            }
+            let result = checkWinner(playerSelection, computerSelection);
+            if (result == "Player") {
+                result += " wins!";
+                winner[0]++;
+            }
+            else if (result == "Computer") {
+                result += " wins!";
+                winner[1]++;
+            }
+            else {
+                result += " results in a tie match";
+            }
+            score.innerHTML = "<small>Player</small>[" + winner[0] + "] <small>Computer</small>[" + winner[1] + "]";
+            messager(playerSelection + " vs " + computerSelection + "<br><b>" + result + "</b>");
+        }
+
+        function messager(mes) {
+            message.innerHTML = mes;
+        }
+
+        function checkWinner(pl, co) {
+            if (pl === co) {
+                return "Draw";
+            }
+            if (pl === "Rock") {
+                if (co === "Paper") {
+                    return "Computer";
+                }
+                else {
+                    return "Player";
+                }
+            }
+            if (pl === "Paper") {
+                if (co === "Scissors") {
+                    return "Computer";
+                }
+                else {
+                    return "Player";
+                }
+            }
+            if (pl === "Scissors") {
+                if (co === "Rock") {
+                    return "Computer";
+                }
+                else {
+                    return "Player";
+                }
+            }
+        }
+		
+    </script>
+
+    
+    </div>
+    <br>
+    
+    <a href="https://thomasking135.github.io/" id="button1">Home</a>
+
+
+    <div class="footer">
+    <p>&copy Bloggin Tom 2021-22</p>
+    </div>
+    <!-- The end of the file -->
+  
+  </body>
+</html>
