@@ -15,24 +15,21 @@
 
     <div id="padding">
     
-    <div id="center">
     <div class="score"></div>
     <div class="message"></div>
-    <button type="button" id="game">R</button><br>
-    <button type="button" id ="game">P</button><br>
-    <button type="button"  id ="game">S</button><br>
-    </div>
+    <button type="button" class="game" id="rock">Rock</button><br>
+    <button type="button" class="game" id ="paper">Paper</button><br>
+    <button type="button"  class="game" id ="scissors">Scissors</button><br>
 
     <img src="../images/rps.jpg" width="100%" class="center">
+
+    
     
     <script>
-    
         const message = document.querySelector(".message");
         const score = document.querySelector(".score");
         const buttons = document.querySelectorAll("button");
         let winner = [0, 0];
-  
-
 
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener("click", playGame);

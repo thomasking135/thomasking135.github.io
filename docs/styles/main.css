@@ -162,7 +162,7 @@ figcaption {
   width: 100%;
 }
 
-#game {
+.game {
   background-color: hsl(56, 79%, 53%); /* Green */
   border: solid 2px;
   color: black;
@@ -176,7 +176,7 @@ figcaption {
   width: 20%;
 }
 
-#game:hover{
+.game:hover{
   background-color: rgb(121, 241, 85);
 }
 
