@@ -186,3 +186,9 @@ figcaption {
   margin-right: auto;
   width: 35%;
 }
+
+.ninja{
+  background: url(../images/netninja.jpg) no-repeat;
+  cursor:pointer;
+  border: none;
+}
