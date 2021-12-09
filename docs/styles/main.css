@@ -192,3 +192,11 @@ figcaption {
   cursor:pointer;
   border: none;
 }
+
+.colour {
+  background-color: rgb(240, 191, 191);
+}
+
+.hue {
+  background-color: rgb(192, 163, 219);
+}
