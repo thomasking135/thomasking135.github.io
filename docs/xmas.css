@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+  --tree-leaves-color-top: #8FB14E;
+  --tree-leaves-color-middle: #567D30;
+  --tree-leaves-color-bottom: #355829;
+  --tree-trunk: #CEB31E;
+  --star: #F9F355;
+}
+
+.card {
+  background: linear-gradient(salmon, coral);
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.tree {
+  margin: 8px 0 8px 64px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+}
+
+.star {
+  margin: 16px auto 0 auto;
+  width: 0;
+  height: 0;
+  border-left: 24px solid transparent;
+  border-bottom: 16px solid var(--star);
+  border-right: 24px solid transparent;
+  transform: rotate(-36deg);
+}
+
+.star::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 0px;
+  border-left: 24px solid transparent;
+  border-bottom: 16px solid var(--star);
+  border-right: 24px solid transparent;
+  transform: rotate(-72deg);
+}
+
+.star::after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 0px;
+  border-left: 24px solid transparent;
+  border-bottom: 16px solid var(--star);
+  border-right: 24px solid transparent;
+  transform: rotate(72deg);
+}
+
+.tree-leaves_top {
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+  border-right: 32px solid transparent;
+  border-bottom: 64px solid var(--tree-leaves-color-top);
+  border-left: 32px solid transparent;
+}
+
+.tree-leaves_middle {
+  width: 32px;
+  height: 0;
+  margin: 0 auto;
+  border-right: 32px solid transparent;
+  border-bottom: 64px solid var(--tree-leaves-color-middle);
+  border-left: 32px solid transparent;
+}
+
+.tree-trunk {
+  margin: 0 auto;
+  z-index: 1;
+  border-top: 12px solid var(--tree-trunk);
+  border-left: 12px solid var(--tree-trunk);
+  border-bottom: 12px solid var(--tree-trunk);
+  border-right: 12px solid var(--tree-trunk);
+  z-index: 2;
+}
+
+.message {
+  margin: auto 40px;
+  color: var(--message);
+  font-family: "Times New Roman", cursive;
+  letter-spacing: .5em;
+  font-size: 16px;
+}
+
+.colour {
+    background-color: rgb(111, 228, 111);
+}
+
+#center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+  }
