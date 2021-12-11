@@ -1,44 +1,101 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Command line interface</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../styles/main.css" rel="stylesheet" type="text/css">
-  </head>
-  
-  <body>
-  
-    <h1>I Saw The CLI and it Opened Up My Eyes!</h1>
+    <head>
+        <title>Simple Calculator</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <style>
+        .title{
+            text-align: center;
+        border-radius: 10px;
+        background-color: pink;
+        color: black;
+        border-color:#ff4456 ;
+        width:100%;
+        }
+        input[type="text"]
+        {
+        border-radius: 9px;
+        text-align: right;
+        background-color:white;
+        border-color: black ;
+        width:90%
+        }
+    </style>
+    <body>
+        <h1>Simple Calculator Prototype</h1>
 
-    
+        <div id="padding">
+            <h2>An Early Experimental Calculator</h2>
 
-    <div id="padding">
-    
-        <h2>CLI Learning Competencies</h2> 
-    
-        <h3>How to Remove/Add a File Using CLI</h3>
-    
-        <p>To create a file using Git Bash I used the command <strong>'touch'</strong> followed by the name of the file I 
-            wanted to create. For instance, I created a file called kitty.txt by first creating a directory
-            by entering the command <strong>'mkdir Meow'</strong> and then creating the file by typing 'touch kitty.txt'. I 
-            then added some text to this file by entering the command 'echo "Hello Kitty!" > kitty.txt'. To 
-            view the file had been created, I entered the command 'ls' and I saw that it had been created 
-            on my computer. I opened it by entering the command 'start kitty.txt'. 
-        </p>
+            <p>This is a prototype of a calculator I did before I went on to work on the stretch version with my pair partner Deepti Khanolkar.</p>
 
+            <!-- table -->
+            <body class="center">
+                <div class="title">Prototype Calculator</div><br>
+                <table border="1" class="center">
+                    <tr>
+                        <td><input type="button" value="c" onclick="clr()" /></td>
+                        <td colspan="3"><input type="text" id="edu" /></td>
+                        <!-- clr() clearss all -->
+                    </tr>
+                    <tr>
+                        <!-- creating buttons and assigning values-->
+                        <td><input type="button" value="+" onclick="dis('+')" /></td>
+                        <td><input type="button" value="1" onclick="dis('1')" /></td>
+                        <td><input type="button" value="2" onclick="dis('2')" /></td>
+                        <td><input type="button" value="3" onclick="dis('3')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="-" onclick="dis('-')" /></td>
+                        <td><input type="button" value="4" onclick="dis('4')" /></td>
+                        <td><input type="button" value="5" onclick="dis('5')" /></td>
+                        <td><input type="button" value="6" onclick="dis('6')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="*" onclick="dis('*')" /></td>
+                        <td><input type="button" value="7" onclick="dis('7')" /></td>
+                        <td><input type="button" value="8" onclick="dis('8')" /></td>
+                        <td><input type="button" value="9" onclick="dis('9')" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="/" onclick="dis('/')" /></td>
+                        <td><input type="button" value="." onclick="dis('.')" /></td>
+                        <td><input type="button" value="0" onclick="dis('0')" /></td>
+                        <!-- Evaluating function call eval()-->
+                        <td><input type="button" value="=" onclick="solve()" /></td>
+                    </tr>
+                </table>
 
+                <script>
+                    //show value/results
+                    function dis(val) {
+                        document.getElementById("edu").value += val;
+                    }
+                    //solve function
+                    function solve() {
+                        let x = document.getElementById("edu").value;
+                        let y = eval(x);
+                        document.getElementById("edu").value = y;
+                    }
+                    //clear function
+                    function clr() {
+                        document.getElementById("edu").value = "";
+                    }
+                </script>
+            </body>
 
-    <img src="../images/commandsGit.JPG" width="100%" class="center"><br>
+            <p id="answer"></p>
+            <p><a href="https://thomasking135.github.io/" id="button1">Home</a><br /></p>
+        </div>
 
-    <a href="https://thomasking135.github.io/" id="button1">Home</a><br>
-    </div>
-    <br>
-    
-    <div class="footer">
-    <p>&copy Bloggin Tom 2021-22</p>
-    </div>
-    <!-- The end of the file -->
-  
-  </body>
+        <br />
+
+        <div class="footer">
+            <p>&copy Bloggin Tom 2021-22</p>
+        </div>
+        <!-- The end of the file -->
+    </body>
 </html>
