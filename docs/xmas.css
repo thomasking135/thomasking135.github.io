@@ -101,3 +101,24 @@
     margin-right: auto;
     width: 35%;
   }
+
+#button1 {
+    background-color: #e4cf11; /* Green */
+    border: solid 2px;
+    color: black;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;        
+    font-size: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    
+  
+}
+
+
+#button1:hover {
+background-color: rgb(197, 115, 100);
+}
